@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<div class="row content">
+    <div class="col-sm-3 sidenav">
+        <h2 class="text-primary"> Categories</h2>
+        <ul class="list-group">
+          {% for i in categories %}
+            <li class="list-item">
+              <a class="nounderline" href = "{{url_for('showCategories', categories_id = i.id)}}" style="color:red">{{i.name}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+	   </div>
+
+    <div class="col-sm-9 mynav">
+      <h2 class="text-primary"> Recent Added</h2>
+      <ul class="list-group">
+        {% for i in items %}
+        <li class="list-item">
+          <a class="nounderline" href = "{{url_for('showItem',categories_id=i.categories_id, items_id=i.id)}}"style="color:red">{{i.name}} <span style="color: gray;">({{i.categories.name}})</span> </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endblock %}

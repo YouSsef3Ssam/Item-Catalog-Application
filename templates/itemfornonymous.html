@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<h3 style="text-align: center; font-family: italic;"><a href = "{{url_for('showCategories', categories_id=categories.id)}}" style="color:black">{{categories.name}}</a></h3>
+</br>
+<dl class="dl-horizontal">
+  <dt>{{items.name}}</dt>
+  <dd>{{items.description}}</dd>
+</dl>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<div style="text-align: center; margin-bottom: 10px;">
+  <h3 style="text-align: center; font-family: italic;"><a href = "{{url_for('showCategories', categories_id=categories.id)}}" style="color:black">{{categories.name}}</a></h3>
+  </br>
+
+  <dl class="dl-horizontal">
+    <dt>{{items.name}}</dt>
+    <dd>{{items.description}}</dd>
+  </dl>
+  <a href = "{{url_for('editItem', categories_id=categories.id, items_id=items.id)}}" class="btn btn-primary">Edit</a> |
+  <a href = "{{url_for('deleteItem', categories_id=categories.id, items_id=items.id)}}" class="btn btn-danger">Delete</a>
+<div>
+{% endblock %}
