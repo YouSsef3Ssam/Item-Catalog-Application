@@ -4,7 +4,7 @@ from database_setup import *
 
 
 # Create database and create a shortcut
-engine = create_engine('sqlite:///catalogs.db')
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
