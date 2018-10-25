@@ -16,7 +16,7 @@ import requests
 
 app = Flask(__name__)
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/catalog/catalog/client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Catalog Application"
 
 engine = create_engine('postgresql://catalog:password@localhost/catalog')
